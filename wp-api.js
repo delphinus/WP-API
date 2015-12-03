@@ -1,7 +1,9 @@
-( function( WP_API_Settings, Backbone, _, window, undefined ) {
-	'use strict';
+var Backbone = require('backbone'),
+	_ = require('underscore'),
+	wp = [};
 
-	window.wp = window.wp || {};
+( function( WP_API_Settings, undefined ) {
+	'use strict';
 
 	wp.api = {
 		models: {},
@@ -917,4 +919,6 @@
 	 * Todo: Handle post meta.
 	 */
 
-})( WP_API_Settings, Backbone, _, window, ( void 0 ) );
+})( WP_API_Settings, ( void 0 ) );
+
+module.exports = wp;
