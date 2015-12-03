@@ -2,12 +2,12 @@
 
 	if ( typeof define === 'function' && define.amd ) {
 		define( [ 'backbone', 'underscore' ], function( Backbone, _ ) {
-			return factory( Backbone, _, root.WP_API_Settings, void 0 );
+			return factory( Backbone, _, window.WP_API_Settings, void 0 );
 		});
 	} else if ( typeof exports !== 'undefined' ) {
 		var Backbone = require( 'backbone' );
 		var _ = require( 'underscore' );
-		module.exports = factory( Backbone, _, root.WP_API_Settings, void 0 );
+		module.exports = factory( Backbone, _, window.WP_API_Settings, void 0 );
 	} else {
 		root.wp = factory( root.Backbone, root._, root.WP_API_Settings, void 0 );
 	}
