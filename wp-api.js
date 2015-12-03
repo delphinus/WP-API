@@ -1,6 +1,7 @@
 var Backbone = require('backbone'),
 	_ = require('underscore'),
-	wp = [};
+	wp = {},
+	WP_API_Settings = window.WP_API_Settings || {};
 
 ( function( WP_API_Settings, undefined ) {
 	'use strict';
