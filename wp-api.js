@@ -1,15 +1,26 @@
-var Backbone = require('backbone'),
-	_ = require('underscore'),
-	wp = {},
-	WP_API_Settings = window.WP_API_Settings || {};
+( function( root, factory ) {
 
-( function( WP_API_Settings, undefined ) {
+	if ( typeof define === 'function' && define.amd ) {
+		define( [ 'backbone', 'underscore' ], function( Backbone, _ ) {
+			return factory( Backbone, _, root.WP_API_Settings, void 0 );
+		});
+	} else if ( typeof exports !== 'undefined' ) {
+		var Backbone = require( 'backbone' );
+		var _ = require( 'underscore' );
+		module.exports = factory( Backbone, _, root.WP_API_Settings, void 0 );
+	} else {
+		root.wp = factory( root.Backbone, root._, root.WP_API_Settings, void 0 );
+	}
+
+}( this, function( Backbone, _, WP_API_Settings, undefined ) {
 	'use strict';
 
-	wp.api = {
-		models: {},
-		collections: {},
-		utils: {}
+	var wp = {
+		api: {
+			models: {},
+			collections: {},
+			utils: {}
+		}
 	};
 
 	/**
@@ -920,6 +931,5 @@ var Backbone = require('backbone'),
 	 * Todo: Handle post meta.
 	 */
 
-})( WP_API_Settings, ( void 0 ) );
-
-module.exports = wp;
+	return wp;
+} ) );
