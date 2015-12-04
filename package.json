@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/WP-API/WP-API.git"
   },
-  "main": "Gruntfile.js",
+  "main": "wp-api.js",
   "author": "WP-API Team <team@wp-api.org>",
   "devDependencies": {
     "grunt": "^0.4.5",
